@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+
+body {
+  font-family: $font-roboto-regular;
+  font-size: $font-size-default;
+}
+
+h1 {
+  font-family: $font-roboto-black;
+  font-size: $font-size-title;
+}
+
+h2 {
+  font-family: $font-roboto-bold;
+  font-size: $font-size-subtitle;
+}
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

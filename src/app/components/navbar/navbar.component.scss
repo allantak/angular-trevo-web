@@ -1,0 +1,49 @@
+@import '../../../variables';
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.5);
+  background-color:  $green;
+  align-tracks: center;
+}
+
+header nav {
+  display: flex;
+  color: #F0F0F0;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 0;
+}
+
+header ul a {
+  color: #F0F0F0;
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: .5rem;
+  font-size: 1rem;
+  font-family: $font-roboto-bold;
+  font-weight: 700;
+}
+
+img:first-child{
+  width: 125px;
+}
+
+img:nth-child(3){
+  width: 25px;
+}
