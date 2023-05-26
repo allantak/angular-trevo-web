@@ -1,0 +1,38 @@
+@import '../../../variables';
+section{
+  margin-top: 3.5rem;
+
+  h1 {
+    color: $green;
+    text-align: center;
+  }
+
+  ul {
+    margin-top: 3.5rem;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  @media (max-width: 1400px) {
+    ul {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      grid-template-columns: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    ul {
+      grid-template-columns: auto;
+    }
+  }
+
+}

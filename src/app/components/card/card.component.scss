@@ -1,0 +1,31 @@
+@import '../../../variables';
+
+.container-card {
+  height: 595px;
+  width: 387px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+
+
+  .container-img-card {
+    height: 45%;
+    width: 100%;
+
+
+    .img-card {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  .text-card {
+    padding: 2rem 1.5rem;
+
+    h2 {
+      margin-bottom: 1rem;
+      color: $orange;
+    }
+  }
+}

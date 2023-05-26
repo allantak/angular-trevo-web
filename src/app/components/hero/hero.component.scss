@@ -1,0 +1,15 @@
+.img-carrosel {
+  height: 900px;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+
+.carousel-indicators li {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+}
