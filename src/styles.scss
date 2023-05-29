@@ -1,8 +1,11 @@
 @import 'variables';
 
 body {
-  font-family: $font-roboto-regular;
-  font-size: $font-size-default;
+  p{
+    font-family: $font-roboto-regular;
+    font-size: $font-size-default;
+    font-weight: 400;
+  }
 
   h1 {
     font-family: $font-roboto-black;
