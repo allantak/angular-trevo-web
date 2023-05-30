@@ -1,0 +1,8 @@
+<section>
+  <h1>newletter</h1>
+  <form #f="ngForm" (ngSubmit)="sendEmail(f)" class="form">
+    <input name="name" placeholder="Nome" ngModel/>
+    <input name="email" placeholder="E-mail" ngModel/>
+    <button type="submit"><h2>Assinar</h2></button>
+  </form>
+</section>

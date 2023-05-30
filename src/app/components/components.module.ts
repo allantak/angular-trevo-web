@@ -7,6 +7,8 @@ import { CardComponent } from './card/card.component';
 import { CategoryComponent } from './category/category.component';
 import { ButtonCategoryComponent } from './button-category/button-category.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NewletterComponent } from './newletter/newletter.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,16 +19,19 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ContrastComponent,
     CardComponent,
     CategoryComponent,
-    ButtonCategoryComponent
+    ButtonCategoryComponent,
+    NewletterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     NavbarComponent,
     HeroComponent,
     ContrastComponent,
-    CategoryComponent
+    CategoryComponent,
+    NewletterComponent
   ]
 })
 export class ComponentsModule { }
