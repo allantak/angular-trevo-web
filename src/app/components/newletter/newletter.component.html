@@ -1,8 +1,8 @@
 <section>
   <h1>newletter</h1>
-  <form #f="ngForm" (ngSubmit)="sendEmail(f)" class="form">
-    <input name="name" placeholder="Nome" ngModel/>
-    <input name="email" placeholder="E-mail" ngModel/>
-    <button type="submit"><h2>Assinar</h2></button>
+  <form #f="ngForm" (ngSubmit)="sendEmail(f)">
+    <input type="text" name="name" placeholder="Nome" ngModel required/>
+    <input type="email" name="email" placeholder="E-mail" ngModel email required/>
+    <button type="submit" [disabled]="!f.valid"><h2>Assinar</h2></button>
   </form>
 </section>
