@@ -1,15 +1,10 @@
 <section>
   <h1>Em Detalhes</h1>
   <ul>
-    <li>
-      <app-card/>
+    <li *ngFor="let product of products">
+      <app-card [product]="product"/>
     </li>
-    <li>
-      <app-card/>
-    </li>
-    <li>
-      <app-card/>
-    </li>
+
   </ul>
 
 
