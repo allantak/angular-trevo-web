@@ -1,5 +1,6 @@
 @import '../../../variables';
-section{
+
+section {
   margin-top: 6rem;
 
   h1 {
@@ -9,13 +10,27 @@ section{
   }
 
   ul {
-    margin-top: 3.5rem;
+    margin: 3.5rem 0;
     list-style: none;
     align-items: center;
     justify-content: center;
     gap: 2rem;
     display: grid;
     grid-template-columns: auto auto auto;
+  }
+
+  .saiba-mais {
+    display: flex;
+    justify-content: center;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: $gray;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
   }
 
   @media (max-width: 1400px) {
