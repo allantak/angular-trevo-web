@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TrevoService } from 'src/app/services/trevo.service';
 import { IProduct } from 'src/app/types/product';
 
 @Component({
@@ -9,10 +10,26 @@ import { IProduct } from 'src/app/types/product';
 export class CardComponent implements OnInit {
   @Input() product!: IProduct;
 
+  urlImage!: String;
+
+  constructor(private server: TrevoService) {
+
+  }
+
   ngOnInit() {
-    console.log(this.product);
+    this.getImage(this.product.productId);
   }
 
 
   imgUrlSlide1: string = 'assets/banner-1.jpg';
+
+  getImage(id: string) {
+    this.server.getIdImageProduct(id).subscribe((data) => {
+      let listImage = data.imgs;
+      listImage.forEach((image) => {
+        console.log(image.imageId);
+        this.urlImage = `http://localhost:8081/images/${image.imageId}`
+      })
+    })
+  }
 }

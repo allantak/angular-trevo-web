@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { take } from 'rxjs';
 import { TrevoService } from 'src/app/services/trevo.service';
 import { IListProduct, IProduct } from 'src/app/types/product';
 
@@ -14,16 +15,15 @@ export class ContrastComponent implements OnInit {
   products!: Array<IProduct>;
 
   ngOnInit() {
-    this.getAllProducts();
+    this.getTreeProduct();
   }
 
-  getAllProducts() {
+  getTreeProduct() {
     this.server.listProduct().subscribe((data) => {
-      this.products = data.content;
+      let productsAll = data.content;
+      this.products = productsAll.slice(0, 3);
     });
   }
-
-
 
 
 }

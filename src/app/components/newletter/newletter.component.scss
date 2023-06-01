@@ -20,7 +20,7 @@ section {
     gap: 20px;
 
     .ng-invalid.ng-touched:not(form) {
-      border: 2px solid #e42522;
+      border: 1px solid #e42522;
     }
 
     input {
@@ -56,7 +56,8 @@ section {
   @media (max-width: 1400px) {
     form {
       grid-template-columns: repeat(1, auto);
-      button{
+
+      button {
         width: 100%;
       }
 

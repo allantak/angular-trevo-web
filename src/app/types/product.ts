@@ -6,6 +6,6 @@ export interface IProduct {
     productId: string,
     productName: string,
     status: string,
-    category: string
-
+    category: string;
+    description: string;
 }
