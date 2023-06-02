@@ -3,15 +3,10 @@
   <div class="horizontal">
     <div class="scroll-container">
       <ul>
-        <li><app-button-category /></li>
-        <li><app-button-category /></li>
-        <li><app-button-category /></li>
-        <li><app-button-category /></li>
-        <li><app-button-category /></li>
-        <li><app-button-category /></li>
+        <li *ngFor="let category of listCategory">
+          <app-button-category [category]="category" />
+        </li>
       </ul>
     </div>
   </div>
-
-
 </section>

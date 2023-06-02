@@ -1,6 +1,10 @@
-<div class="container-category">
-  <img [src]="imgCaminhoes">
+<div class="container-category" (click)="passCategory(category.category)" >
+  <div class="wrapper-img">
+    <img [src]="category.img" />
+  </div>
+
+
   <div class="text">
-    <p>Tratores</p>
+    <p>{{ category.name }}</p>
   </div>
 </div>

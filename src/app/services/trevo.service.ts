@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IListProduct } from '../types/product';
+import { IListProduct, IProduct } from '../types/product';
 import { IContentImage } from '../types/image';
 
 @Injectable({
@@ -16,6 +16,10 @@ export class TrevoService {
 
   getIdImageProduct(idProduct: String){
     return this.http.get<IContentImage>(this.url + 'products/images/' + idProduct)
+  }
+
+  getProductCategory(category: String){
+    return this.http.get<Array<IProduct>>(this.url + 'products/categories/' + category)
   }
 
 }

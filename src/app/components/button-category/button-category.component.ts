@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { TrevoService } from 'src/app/services/trevo.service';
+import { ICategory } from 'src/app/types/cateogry';
+import { IListProduct } from 'src/app/types/product';
 
 @Component({
   selector: 'app-button-category',
@@ -7,6 +11,14 @@ import { Component } from '@angular/core';
 })
 export class ButtonCategoryComponent {
 
-  imgCaminhoes: string ='assets/category/caminhoes.png';
+  constructor(private server: TrevoService, private router: Router) { }
+
+  @Input() category!: ICategory
+
+  passCategory(category: String) {
+    this.router.navigate(['product', category])
+  }
+
+
 
 }

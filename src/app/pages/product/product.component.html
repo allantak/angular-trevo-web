@@ -1,1 +1,11 @@
-<p>product works!</p>
+<app-navbar />
+<section>
+  <h1>Produtos</h1>
+  <ul>
+    <li *ngFor="let product of listProduct">
+      <app-card [product]="product" />
+    </li>
+  </ul>
+</section>
+
+<app-footer />

@@ -39,7 +39,8 @@ import { FooterComponent } from './footer/footer.component';
     CategoryComponent,
     NewletterComponent,
     VideoComponent,
-    FooterComponent
+    FooterComponent,
+    CardComponent
   ]
 })
 export class ComponentsModule { }
