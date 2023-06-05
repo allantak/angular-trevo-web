@@ -7,7 +7,12 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  active: boolean = false;
+
+  toggleActive(){
+    this.active = !this.active;
+  }
+
   imageUrlLogo: string = 'assets/logo.png';
   imageUrlWhatsapp: string = 'assets/whatsapp.png';
-
 }

@@ -1,6 +1,7 @@
 @import 'variables';
 
 body {
+  overflow-x: hidden;
   p{
     font-family: $font-roboto-regular;
     font-size: $font-size-default;
@@ -17,6 +18,10 @@ body {
     font-family: $font-roboto-bold;
     font-size: $font-size-subtitle;
     font-weight: 700;
+  }
+
+  ul{
+    padding: 0;
   }
 }
 
