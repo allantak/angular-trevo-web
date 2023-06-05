@@ -1,4 +1,8 @@
-<footer>
+
+<button class="scroll-to-top" [ngClass]="{'show': mostrarBotaoScrollTop}" (click)="scrollToTop()">
+  <img [src]="imgSetaTop" alt="Imagem Seta top">
+</button>
+<footer id="footer">
   <div class="container-logo">
     <div>
       <img [src]="imgLogoVerde" />

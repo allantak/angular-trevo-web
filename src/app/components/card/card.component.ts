@@ -27,7 +27,6 @@ export class CardComponent implements OnInit {
     this.server.getIdImageProduct(id).subscribe((data) => {
       let listImage = data.imgs;
       listImage.forEach((image) => {
-        console.log(image.imageId);
         this.urlImage = `http://localhost:8081/images/${image.imageId}`
       })
     })

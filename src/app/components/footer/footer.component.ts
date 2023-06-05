@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -7,11 +7,29 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
-  imgFacebook: string ='assets/social-midia/facebook.png';
-  imgTwitter: string ='assets/social-midia/twitter.png';
-  imgInstragram: string ='assets/social-midia/instagram.png';
-  imgYoutube: string ='assets/social-midia/youtube.png';
+  constructor(private elementRef: ElementRef) { }
 
-  imgLogoVerde: string ='assets/logo-verde.png';
+  imgFacebook: string = 'assets/social-midia/facebook.png';
+  imgTwitter: string = 'assets/social-midia/twitter.png';
+  imgInstragram: string = 'assets/social-midia/instagram.png';
+  imgYoutube: string = 'assets/social-midia/youtube.png';
+  imgLogoVerde: string = 'assets/logo-verde.png';
+  imgSetaTop: string = 'assets/seta-top.png';
+
+  mostrarBotaoScrollTop = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const footerOffsetTop = this.elementRef.nativeElement.querySelector('footer').offsetTop;
+
+    this.mostrarBotaoScrollTop = window.pageYOffset + 800 > footerOffsetTop;
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 
 }

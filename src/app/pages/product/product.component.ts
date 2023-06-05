@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TrevoService } from 'src/app/services/trevo.service';
-import { IListProduct, IProduct } from 'src/app/types/product';
+import { IProduct } from 'src/app/types/product';
 
 @Component({
   selector: 'app-product',
@@ -18,6 +18,10 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     let paramCategory = this.route.snapshot.paramMap.get('category')
 
+    if( paramCategory === 'all') {
+      this.listAllProduct();
+    }
+
     this.listGetCategory(paramCategory);
   }
 
@@ -32,5 +36,12 @@ export class ProductComponent implements OnInit {
 
     return this.listProduct;
   }
+
+  listAllProduct(){
+    this.server.listProduct().subscribe(data => {
+      this.listProduct = data.content;
+    })
+  }
+
 
 }

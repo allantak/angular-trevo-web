@@ -1,6 +1,32 @@
 @import '../../../variables';
 
-footer{
+.scroll-to-top {
+  display: none;
+  background-color: $orange;
+  width: 80px;
+  height: 80px;
+  z-index: 999;
+  position: fixed;
+  bottom: 10rem;
+  right: 10rem;
+  border-radius: 10px;
+  border: initial;
+
+  opacity: 0;
+}
+
+.scroll-to-top.show {
+  display: block;
+  transition: opacity 0.3s ease-in;
+  opacity: 1;
+  img{
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+  }
+}
+
+footer {
   display: grid;
   grid-template-columns: repeat(3, auto);
 
@@ -10,17 +36,18 @@ footer{
   background-color: $gray;
   color: #fff;
 
-  .description{
+  .description {
     display: flex;
     flex-direction: column;
     gap: 50px;
   }
 
-  .container-logo{
+  .container-logo {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    .social-midia{
+
+    .social-midia {
       display: flex;
       gap: 56px;
     }
@@ -30,7 +57,7 @@ footer{
 
 }
 
-.copyright{
+.copyright {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +65,7 @@ footer{
   color: #fff;
   padding: 1rem 0;
 
-  p{
+  p {
     margin-bottom: 0;
   }
 }
