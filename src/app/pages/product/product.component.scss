@@ -8,23 +8,13 @@ section{
     color: $green;
   }
 
-  ul {
-    margin: 3.5rem 0;
-    list-style: none;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    display: grid;
-    grid-template-columns: auto auto auto;
-  }
-
   @media (max-width: 1400px) {
     ul {
       grid-template-columns: auto auto;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     ul {
       grid-template-columns: auto;
     }
@@ -37,3 +27,15 @@ section{
   }
 
 }
+
+.grid-product {
+  margin: 3.5rem 0;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+

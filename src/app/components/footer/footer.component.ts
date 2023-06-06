@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -20,9 +20,11 @@ export class FooterComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const footerOffsetTop = this.elementRef.nativeElement.querySelector('footer').offsetTop;
 
-    this.mostrarBotaoScrollTop = window.pageYOffset + 800 > footerOffsetTop;
+    const footerOffsetTop = this.elementRef.nativeElement.querySelector('footer').offsetTop;
+    console.log(footerOffsetTop)
+
+    this.mostrarBotaoScrollTop = window.pageYOffset > footerOffsetTop - 800;
   }
 
   scrollToTop() {

@@ -1,11 +1,25 @@
 <app-navbar />
-<section>
-  <h1>Produtos</h1>
-  <ul>
-    <li *ngFor="let product of listProduct">
-      <app-card [product]="product" />
-    </li>
-  </ul>
-</section>
+
+<div *ngIf="isLoading; else content">
+  <div class="grid-product">
+    <app-skeleton-card />
+    <app-skeleton-card />
+    <app-skeleton-card />
+    <app-skeleton-card />
+    <app-skeleton-card />
+    <app-skeleton-card />
+  </div>
+</div>
+
+<ng-template #content>
+  <section>
+    <h1>Produtos</h1>
+    <ul class="grid-product">
+      <li *ngFor="let product of listProduct">
+        <app-card [product]="product" />
+      </li>
+    </ul>
+  </section>
+</ng-template>
 
 <app-footer />

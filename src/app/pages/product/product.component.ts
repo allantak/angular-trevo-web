@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { TrevoService } from 'src/app/services/trevo.service';
 import { IProduct } from 'src/app/types/product';
 
@@ -11,37 +11,47 @@ import { IProduct } from 'src/app/types/product';
 export class ProductComponent implements OnInit {
 
 
-  constructor(private server: TrevoService, private route: ActivatedRoute) { }
+  constructor(private server: TrevoService, private route: ActivatedRoute, private router: Router) { }
 
   listProduct!: Array<IProduct>;
+  imgTest: String = 'assets/banner-1.jpg'
+  isLoading: boolean = true;
 
   ngOnInit() {
     let paramCategory = this.route.snapshot.paramMap.get('category')
-
-    if( paramCategory === 'all') {
+    this.scrollToTop()
+    if (paramCategory === 'all') {
       this.listAllProduct();
+    } else {
+      this.listGetCategory(paramCategory);
     }
-
-    this.listGetCategory(paramCategory);
   }
 
-  listGetCategory(category: string | null):  Array<IProduct> | undefined {
+  listGetCategory(category: string | null): Array<IProduct> | undefined {
     if (category === null) {
       return undefined;
     }
 
     this.server.getProductCategory(category).subscribe(data => {
       this.listProduct = data;
+      this.isLoading = false;
     });
+
 
     return this.listProduct;
   }
 
-  listAllProduct(){
+  listAllProduct() {
     this.server.listProduct().subscribe(data => {
       this.listProduct = data.content;
+      this.isLoading = false;
     })
   }
 
-
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }

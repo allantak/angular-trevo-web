@@ -8,7 +8,7 @@
   z-index: 999;
   position: fixed;
   bottom: 10rem;
-  right: 10rem;
+  right: 5%;
   border-radius: 10px;
   border: initial;
 
@@ -19,7 +19,8 @@
   display: block;
   transition: opacity 0.3s ease-in;
   opacity: 1;
-  img{
+
+  img {
     width: 50%;
     height: 50%;
     object-fit: contain;
@@ -79,7 +80,7 @@ footer {
 
 @media (max-width: 1000px) {
   footer {
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, auto);
     gap: 50px
   }
 }
@@ -89,4 +90,17 @@ footer {
     grid-template-columns: auto;
     gap: 50px
   }
+
+  .scroll-to-top {
+    width: 70px;
+    height: 70px;
+  }
 }
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    width: 50px;
+    height: 50px;
+  }
+}
+

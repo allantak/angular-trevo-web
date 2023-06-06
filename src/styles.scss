@@ -1,5 +1,14 @@
 @import 'variables';
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 body {
   overflow-x: hidden;
   p{
@@ -25,11 +34,11 @@ body {
   }
 }
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+@media (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
 }
+
 

@@ -12,6 +12,7 @@ import { NewletterComponent } from './newletter/newletter.component';
 import { FormsModule } from '@angular/forms';
 import { VideoComponent } from './video/video.component';
 import { FooterComponent } from './footer/footer.component';
+import { SkeletonCardComponent } from './skeleton-card/skeleton-card.component';
 
 
 
@@ -25,7 +26,8 @@ import { FooterComponent } from './footer/footer.component';
     ButtonCategoryComponent,
     NewletterComponent,
     VideoComponent,
-    FooterComponent
+    FooterComponent,
+    SkeletonCardComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,8 @@ import { FooterComponent } from './footer/footer.component';
     NewletterComponent,
     VideoComponent,
     FooterComponent,
-    CardComponent
+    CardComponent,
+    SkeletonCardComponent
   ]
 })
 export class ComponentsModule { }
