@@ -1,6 +1,6 @@
 <header>
   <nav>
-    <a href="/">
+    <a href="/" class="container-logo">
       <img [src]="imageUrlLogo" class="logo"/>
     </a>
     <div class="mobile-menu" (click)="toggleActive()">
@@ -28,9 +28,15 @@
         <a href="#video">Vídeos</a>
       </li>
       <li>
-        <a href="#contato">Contato</a>
+        <a href="#footer">Contato</a>
+      </li>
+      <li class="mobile-whatsapp">
+        <a href="https://api.whatsapp.com/send?phone=5514998202076&text=Ol%C3%A1%20vim%20pelo%20site%20da%20trevo">Whatsapp</a>
       </li>
     </ul>
-    <img [src]="imageUrlWhatsapp" class="whatsapp"/>
+    <a href="https://api.whatsapp.com/send?phone=5514998202076&text=Ol%C3%A1%20vim%20pelo%20site%20da%20trevo">
+      <img [src]="imageUrlWhatsapp" class="whatsapp" />
+    </a>
+
   </nav>
 </header>

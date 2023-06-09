@@ -22,7 +22,6 @@ export class FooterComponent {
   onWindowScroll() {
 
     const footerOffsetTop = this.elementRef.nativeElement.querySelector('footer').offsetTop;
-    console.log(footerOffsetTop)
 
     this.mostrarBotaoScrollTop = window.pageYOffset > footerOffsetTop - 800;
   }

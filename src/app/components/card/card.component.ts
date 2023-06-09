@@ -12,6 +12,7 @@ export class CardComponent implements OnInit {
 
   urlImage!: String;
 
+
   constructor(private server: TrevoService) {
 
   }

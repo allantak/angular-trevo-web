@@ -46,6 +46,10 @@ header ul a {
   width: 25px;
 }
 
+.mobile-whatsapp{
+  display: none;
+}
+
 .mobile-menu {
   display: none;
   cursor: pointer;
@@ -95,7 +99,11 @@ header ul a {
     display: none;
   }
 
-  nav a{
+  .mobile-whatsapp{
+    display: block;
+  }
+
+  .container-logo{
    order: 2;
   }
 
