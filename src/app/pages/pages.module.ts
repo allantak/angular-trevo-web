@@ -4,6 +4,7 @@ import { ComponentsModule } from '../components/components.module';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     ComponentsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class PagesModule { }
