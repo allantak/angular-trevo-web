@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { TrevoService } from 'src/app/services/trevo.service';
 import { IProduct } from 'src/app/types/product';
 
@@ -11,7 +11,7 @@ import { IProduct } from 'src/app/types/product';
 export class ProductComponent implements OnInit {
 
 
-  constructor(private server: TrevoService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private server: TrevoService, private route: ActivatedRoute) { }
 
   listProduct!: Array<IProduct>;
   imgTest: String = 'assets/banner-1.jpg'
@@ -32,19 +32,30 @@ export class ProductComponent implements OnInit {
       return undefined;
     }
 
-    this.server.getProductCategory(category).subscribe(data => {
-      this.listProduct = data;
-      this.isLoading = false;
+    this.server.getProductCategory(category).subscribe({
+      next: ((data) => {
+        this.listProduct = data;
+        this.isLoading = false;
+      }),
+      error: ((err) => {
+        this.isLoading = true;
+        console.log(err);
+      })
     });
-
 
     return this.listProduct;
   }
 
   listAllProduct() {
-    this.server.listProduct().subscribe(data => {
-      this.listProduct = data.content;
-      this.isLoading = false;
+    this.server.listProduct().subscribe({
+      next: ((data) => {
+        this.listProduct = data.content;
+        this.isLoading = false;
+      }),
+      error: ((err) => {
+        console.log(err);
+        this.isLoading = true;
+      })
     })
   }
 

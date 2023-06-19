@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   imgUrlSlide1: string = 'assets/banner-1.jpg';
   imgUrlSlide2: string = 'assets/banner-2.jpg';
   imgUrlSlide3: string = 'assets/banner-3.jpg';
+  isLoading: boolean = true;
 
   listCategory: Array<ICategory> = [{
     img: 'assets/category/trator.png',
@@ -46,7 +47,7 @@ export class HomeComponent implements OnInit {
     name: 'caminhoes',
     category: 'CAMINHOES'
   }
-]
+  ]
 
   constructor(private server: TrevoService, private router: Router) { }
 
@@ -58,10 +59,19 @@ export class HomeComponent implements OnInit {
   }
 
   getTreeProduct() {
-    this.server.listProduct().subscribe((data) => {
-      let productsAll = data.content;
-      this.products = productsAll.slice(0, 3);
-    });
+    this.server.listProduct().subscribe(
+      {
+        next: ((value) => {
+          let productsAll = value.content;
+          this.products = productsAll.slice(0, 3);
+          this.isLoading = false;
+        }),
+        error: (err) => {
+          this.isLoading = true;
+          console.log(err)
+        }
+      }
+    );
   }
 
   passCategory() {

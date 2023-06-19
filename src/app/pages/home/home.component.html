@@ -55,11 +55,23 @@
 
   <section id="destaque" class="container-contrast">
     <h1>Em Detalhes</h1>
-    <ul>
-      <li *ngFor="let product of products">
-        <app-card [product]="product" />
-      </li>
-    </ul>
+
+    <div *ngIf="isLoading; else content">
+      <div class="grid-product">
+        <app-skeleton-card />
+        <app-skeleton-card />
+        <app-skeleton-card />
+      </div>
+    </div>
+
+    <ng-template #content>
+      <ul class="grid-product">
+        <li *ngFor="let product of products">
+          <app-card [product]="product" />
+        </li>
+      </ul>
+    </ng-template>
+
 
     <div class="saiba-mais">
       <a (click)="passCategory()"> Saiba mais </a>
